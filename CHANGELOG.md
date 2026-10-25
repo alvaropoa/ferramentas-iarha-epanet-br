@@ -1,5 +1,12 @@
 # Histórico de versões
 
+## 1.1.0 — 2026-10-25
+
+- Nova ferramenta 8, **Imagem de Fundo**: baixa imagem de satélite, ruas, topográfico ou cinza claro
+  (serviços de mapa da Esri) já no sistema de coordenadas da rede, grava em BMP e escreve a seção
+  `[BACKDROP]` com as dimensões da imagem, para o fundo aparecer alinhado. Também remove o fundo.
+- Exemplo do manual para criar ferramentas renomeado para `09_nos_sem_demanda.py`.
+
 ## 1.0.0 — 2026-10-25
 
 Primeira versão pública.

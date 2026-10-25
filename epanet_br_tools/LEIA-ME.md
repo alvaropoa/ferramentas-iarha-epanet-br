@@ -1,6 +1,6 @@
 # Ferramentas de demonstração — EPANET 2.2 Brasil
 
-Sete ferramentas para o menu **Ferramentas** do EPANET 2.2 Brasil.
+Oito ferramentas para o menu **Ferramentas** do EPANET 2.2 Brasil.
 São scripts Python que usam só a biblioteca padrão (nada para `pip install`).
 
 | # | Ferramenta | Lê | Altera o projeto? |
@@ -12,6 +12,7 @@ São scripts Python que usam só a biblioteca padrão (nada para `pip install`).
 | 5 | Relatório de Diagnóstico IARHA — capa, síntese automática, mapa de pressões, gráficos, consistência e anexo, em A4 pronto para PDF | `$INPFILE` (simula) | não |
 | 6 | Relatório de Análise da Rede (padrão IARHA-ATLAS) — topologia, pressões, hidráulica, demandas, distribuições em km de rede, balanço, reservação (K1), top 10, diagnóstico e 6 mapas temáticos (pressão, perda de carga, velocidade, demanda, elevação, diâmetro) | `$INPFILE` (simula) | não |
 | 7 | Configurar o Relatório de Análise — janela para título, subtítulo, responsável, logo, cores, critérios, classes e cores de cada mapa, seções incluídas; prévia com a rede de demonstração | — | não |
+| 8 | Imagem de Fundo — baixa imagem de satélite ou de mapa (Esri) no sistema de coordenadas da rede, grava BMP e a seção `[BACKDROP]`; fundo já alinhado | `$INPFILE` | **sim** (gera `.bak`) |
 
 As ferramentas 1, 2 e 4 abrem um relatório HTML no navegador.
 
@@ -47,6 +48,7 @@ as alterações.
 | Parâmetros (5) | `"C:\EPANET_Ferramentas\05_relatorio_iarha.py" $INPFILE 10 40 0.4 3.5` |
 | Parâmetros (6) | `"C:\EPANET_Ferramentas\06_relatorio_analise_rede.py" $INPFILE` (critérios vêm da configuração) |
 | Parâmetros (7) | `"C:\EPANET_Ferramentas\07_configurar_relatorio.py"` (não precisa de $INPFILE) |
+| Parâmetros (8) | `"C:\EPANET_Ferramentas\08_imagem_fundo.py" $INPFILE` + marcar **Atualizar o Epanet após finalizar o programa** |
 
 O campo **Programa** é sempre o `pythonw.exe`, nunca o `.py` (apontar para o `.py` faz o
 Windows abrir o arquivo no editor associado, como o VS Code). O `.py` vai em **Parâmetros**.

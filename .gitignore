@@ -3,3 +3,4 @@ __pycache__/
 *.bak
 # configuração pessoal do relatório (cada usuário gera a sua pela ferramenta 7)
 epanet_br_tools/config_relatorio.json
+epanet_br_tools/config_fundo.json

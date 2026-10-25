@@ -7,7 +7,7 @@
 3. [Requisitos](#requisitos)
 4. [Instalação](#instalação)
 5. [Como cadastrar uma ferramenta no EPANET](#como-cadastrar-uma-ferramenta-no-epanet)
-6. [Cadastro das sete ferramentas](#cadastro-das-sete-ferramentas)
+6. [Cadastro das oito ferramentas](#cadastro-das-oito-ferramentas)
 7. [Usando cada ferramenta](#usando-cada-ferramenta)
 8. [Personalizando o relatório](#personalizando-o-relatório)
 9. [Como funciona por dentro](#como-funciona-por-dentro)
@@ -17,7 +17,7 @@
 
 ## Apresentação
 
-As Ferramentas IARHA acrescentam sete funções ao menu **Ferramentas** do EPANET 2.2 Brasil. Com um clique, você obtém o resumo da rede, a verificação do cadastro, a alteração de rugosidade em lote, a checagem de pressões e velocidades pela NBR 12218 e dois relatórios técnicos com mapas, sem sair do programa.
+As Ferramentas IARHA acrescentam oito funções ao menu **Ferramentas** do EPANET 2.2 Brasil. Com um clique, você obtém o resumo da rede, a verificação do cadastro, a alteração de rugosidade em lote, a checagem de pressões e velocidades pela NBR 12218, dois relatórios técnicos com mapas e a imagem de satélite no fundo da rede, sem sair do programa.
 
 Tudo parte do EPANET. As ferramentas não substituem nenhuma função dele: usam o próprio motor de cálculo do EPANET 2.2 Brasil e só organizam os resultados em formatos prontos para análise e entrega.
 
@@ -29,7 +29,7 @@ Tudo parte do EPANET. As ferramentas não substituem nenhuma função dele: usam
 
 ## O que vem no pacote
 
-O pacote é uma pasta única, `epanet_br_tools`, com sete ferramentas, os módulos de apoio e uma rede de demonstração.
+O pacote é uma pasta única, `epanet_br_tools`, com oito ferramentas, os módulos de apoio e uma rede de demonstração.
 
 | # | Ferramenta | Arquivo | O que faz | Altera o projeto? |
 | --- | --- | --- | --- | --- |
@@ -40,6 +40,7 @@ O pacote é uma pasta única, `epanet_br_tools`, com sete ferramentas, os módul
 | 5 | Relatório de Diagnóstico | `05_relatorio_iarha.py` | Relatório A4 com capa, síntese, mapa de pressões e anexo | Não |
 | 6 | Relatório de Análise da Rede | `06_relatorio_analise_rede.py` | Painel completo com indicadores, histogramas, reservação, Top 10, diagnóstico e 6 mapas temáticos | Não |
 | 7 | Configurar Relatório | `07_configurar_relatorio.py` | Janela para personalizar o relatório da ferramenta 6 | Não |
+| 8 | Imagem de Fundo | `08_imagem_fundo.py` | Baixa imagem de satélite ou de mapa e coloca no fundo da rede, já alinhada | **Sim** (seção `[BACKDROP]`, com backup `.bak`) |
 
 Arquivos de apoio na mesma pasta, que precisam ficar junto das ferramentas:
 
@@ -49,6 +50,7 @@ Arquivos de apoio na mesma pasta, que precisam ficar junto das ferramentas:
 - `rede_demo.inp` — rede pequena para testar e para a prévia da configuração
 - `Cadastro_Ferramentas_EPANET_Br.xlsx` — planilha que monta os campos do cadastro com os seus caminhos
 - `config_relatorio.json` — criado na primeira vez que você salva a configuração
+- `config_fundo.json` — guarda o último sistema de coordenadas e mapa usados na ferramenta 8
 
 ## Requisitos
 
@@ -102,9 +104,9 @@ Não existe `$OUTFILE` na versão brasileira. Por isso as ferramentas 4, 5 e 6 s
 
 **Cuidado ao copiar e colar.** Confira se a linha de Parâmetros começa com aspas, fecha as aspas depois do `.py` e não termina com uma crase ou aspas sobrando.
 
-## Cadastro das sete ferramentas
+## Cadastro das oito ferramentas
 
-Com a pasta em `C:\EPANET_Ferramentas`, os campos Programa e Pasta de Trabalho são iguais nas sete ferramentas. Só mudam os Parâmetros e a opção de atualizar.
+Com a pasta em `C:\EPANET_Ferramentas`, os campos Programa e Pasta de Trabalho são iguais nas oito ferramentas. Só mudam os Parâmetros e a opção de atualizar.
 
 | # | Nome sugerido | Parâmetros | Atualizar após finalizar |
 | --- | --- | --- | --- |
@@ -115,16 +117,17 @@ Com a pasta em `C:\EPANET_Ferramentas`, os campos Programa e Pasta de Trabalho s
 | 5 | Relatório de Diagnóstico | `"C:\EPANET_Ferramentas\05_relatorio_iarha.py" $INPFILE 10 40 0.4 3.5` | Não |
 | 6 | Relatório de Análise da Rede | `"C:\EPANET_Ferramentas\06_relatorio_analise_rede.py" $INPFILE` | Não |
 | 7 | Configurar Relatório | `"C:\EPANET_Ferramentas\07_configurar_relatorio.py"` | Não |
+| 8 | Imagem de Fundo | `"C:\EPANET_Ferramentas\08_imagem_fundo.py" $INPFILE` | **Sim** |
 
 **Os números depois de `$INPFILE`** nas ferramentas 4 e 5 são, nesta ordem: pressão mínima (mca), pressão máxima (mca), velocidade mínima (m/s) e velocidade máxima (m/s). Se omitidos, valem 10, 40, 0,4 e 3,5. Aceitam ponto ou vírgula decimal.
 
 **Na ferramenta 6** os critérios vêm da janela de configuração (ferramenta 7). Se você escrever números depois de `$INPFILE`, eles têm prioridade: pressão mínima, máxima, velocidade mínima, máxima e K1.
 
-O pacote traz a planilha `Cadastro_Ferramentas_EPANET_Br.xlsx`. Nela você troca o caminho do Python e da pasta uma vez, e as sete linhas saem prontas para copiar.
+O pacote traz a planilha `Cadastro_Ferramentas_EPANET_Br.xlsx`. Nela você troca o caminho do Python e da pasta uma vez, e as oito linhas saem prontas para copiar.
 
 ## Usando cada ferramenta
 
-Com o projeto aberto, escolha a ferramenta no menu **Ferramentas**. As de relatório abrem uma página no navegador; a Rugosidade em Lote abre uma janela e devolve o projeto alterado ao EPANET.
+Com o projeto aberto, escolha a ferramenta no menu **Ferramentas**. As de relatório abrem uma página no navegador; a Rugosidade em Lote e a Imagem de Fundo abrem uma janela e devolvem o projeto alterado ao EPANET.
 
 **Para guardar um relatório:** o arquivo HTML fica na pasta temporária do Windows e é substituído na próxima execução. Para manter, clique em **Imprimir / salvar PDF**, escolha "Salvar como PDF", papel A4, margens padrão e marque **Gráficos de fundo**.
 
@@ -197,6 +200,28 @@ Todos os valores são convertidos para unidades SI (m, mm, mca, L/s, m/s, m/km),
 
 Abre a janela de personalização do relatório 6, explicada na próxima seção. Não usa o projeto aberto.
 
+### 8 · Imagem de Fundo
+
+Coloca uma imagem de satélite ou de mapa atrás da rede, já alinhada com as coordenadas. Precisa de internet e de uma rede georreferenciada, com coordenadas em UTM ou em graus.
+
+1. Escolha a ferramenta. A janela mostra o número de nós e a área ocupada pelas coordenadas.
+2. Em **Sistema de coordenadas da rede**, escolha o sistema em que a rede foi desenhada, por exemplo SIRGAS 2000 / UTM zona 22S (EPSG 31982). Para outro sistema, digite o código EPSG.
+3. Escolha o **Mapa de fundo**: Satélite, Ruas, Topográfico ou Cinza claro.
+4. Ajuste o **Lado maior da imagem**. A linha azul mostra o tamanho em pixels, os metros por pixel e o tamanho do arquivo. 2048 pixels servem para a maioria das redes; para uma cidade inteira, use 4096.
+5. Clique em **Baixar e aplicar**. O EPANET recarrega o projeto já com o fundo.
+
+![Janela da Imagem de Fundo](img/08_imagem_fundo.png)
+
+**Como o alinhamento funciona.** A ferramenta calcula o retângulo que envolve nós e vértices, soma a margem e pede ao serviço de mapas da Esri (ArcGIS Online) a imagem exatamente desse retângulo, já no sistema de coordenadas da rede. Grava a imagem em BMP, um dos formatos que o EPANET aceita como fundo, e escreve na seção `[BACKDROP]` as dimensões do mapa iguais aos cantos da imagem. Como imagem e dimensões têm a mesma proporção, o fundo cai no lugar certo sem alinhar à mão.
+
+**Onde fica a imagem.** Ao lado do projeto. Quando o INP está na pasta temporária, que é o caso do menu Ferramentas, a imagem vai para `Documentos\EPANET_Fundos`. O nome leva um código da área, então cada projeto tem a sua. Depois de aplicar, salve o projeto no EPANET para que ele guarde o fundo.
+
+**Remover fundo** tira a imagem do projeto (a linha `FILE` da seção `[BACKDROP]`). O arquivo continua na pasta.
+
+**Conferência das coordenadas.** Se as coordenadas não combinam com o sistema escolhido, a janela avisa em vermelho antes de baixar. A `rede_demo.inp`, por exemplo, tem coordenadas arbitrárias e não serve para esta ferramenta. Um sistema errado desloca a imagem: a zona UTM errada joga o fundo a centenas de quilômetros, e um datum diferente (SAD 69, Córrego Alegre) pode deixá-lo dezenas de metros fora. Nesse caso, prefira converter a rede para SIRGAS 2000.
+
+**Fonte das imagens.** Satélite: Esri, Maxar, Earthstar Geographics e comunidade de usuários GIS. O uso segue os termos da Esri; cite a fonte em figuras e relatórios feitos com o fundo.
+
 ## Personalizando o relatório
 
 A ferramenta 7 abre uma janela com cinco abas. O que você salvar ali vale para todos os próximos Relatórios de Análise da Rede (ferramenta 6) e fica gravado em `config_relatorio.json`, na pasta das ferramentas.
@@ -258,6 +283,9 @@ Quase todos os problemas vêm do cadastro da ferramenta. Para ver a mensagem de 
 | "O projeto não tem coordenadas — mapa indisponível" | Rede sem a seção `[COORDINATES]` | Os mapas precisam das coordenadas dos nós |
 | Relatório 6 com fontes diferentes | Pasta `fontes` ausente | Copie a pasta `fontes` junto com os scripts |
 | `where pythonw` não mostra nada | No PowerShell, `where` é outro comando | Digite `where.exe pythonw` |
+| O fundo não aparece depois de aplicar | "Atualizar o Epanet após finalizar" desmarcado na ferramenta 8 | Marque a opção no cadastro e rode de novo |
+| "Não consegui baixar a imagem" | Sem internet, proxy da empresa bloqueando `services.arcgisonline.com` ou código EPSG desconhecido | Abra o endereço no navegador; se não abrir, peça a liberação à TI; confira o EPSG |
+| Fundo em outro lugar ou deslocado | Sistema de coordenadas errado (zona UTM ou datum) | Escolha o sistema certo e aplique de novo |
 
 ## Criando suas próprias ferramentas
 
@@ -266,7 +294,7 @@ Uma ferramenta nova é um script Python que recebe `$INPFILE` e usa o módulo `e
 Exemplo completo, testado: lista os nós de consumo sem demanda base (não considera a seção `[DEMANDS]`).
 
 ```python
-# 08_nos_sem_demanda.py — Parâmetros: "<pasta>\08_nos_sem_demanda.py" $INPFILE
+# 09_nos_sem_demanda.py — Parâmetros: "<pasta>\09_nos_sem_demanda.py" $INPFILE
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from epanet_comum import Inp, arg_arquivo, gravar_relatorio, tabela_html, esc

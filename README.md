@@ -1,6 +1,6 @@
 # Ferramentas IARHA para o EPANET 2.2 Brasil
 
-Sete ferramentas para o menu **Ferramentas** do [EPANET 2.2 Brasil](https://www.ct.ufpb.br/lenhs/downlodas/epanet/) (LENHS/UFPB). Com um clique, você obtém o resumo da rede, a verificação do cadastro, a alteração de rugosidade em lote, a checagem de pressões e velocidades pela NBR 12218 e dois relatórios técnicos com mapas, sem sair do programa.
+Oito ferramentas para o menu **Ferramentas** do [EPANET 2.2 Brasil](https://www.ct.ufpb.br/lenhs/downlodas/epanet/) (LENHS/UFPB). Com um clique, você obtém o resumo da rede, a verificação do cadastro, a alteração de rugosidade em lote, a checagem de pressões e velocidades pela NBR 12218, dois relatórios técnicos com mapas e a imagem de satélite no fundo da rede, sem sair do programa.
 
 Tudo parte do EPANET. As ferramentas usam o próprio motor de cálculo do EPANET 2.2 Brasil e só organizam os resultados em formatos prontos para análise e entrega.
 
@@ -17,6 +17,7 @@ Tudo parte do EPANET. As ferramentas usam o próprio motor de cálculo do EPANET
 | 5 | Relatório de Diagnóstico | Relatório A4 com capa, síntese, mapa de pressões e anexo | Não |
 | 6 | Relatório de Análise da Rede | Indicadores, histogramas, reservação, Top 10, diagnóstico e 6 mapas temáticos | Não |
 | 7 | Configurar Relatório | Janela para personalizar título, logo, cores, critérios, mapas e seções do relatório 6 | Não |
+| 8 | Imagem de Fundo | Baixa imagem de satélite ou de mapa e coloca no fundo da rede, já alinhada | **Sim** (seção `[BACKDROP]`) |
 
 ## Instalação rápida
 
@@ -42,6 +43,7 @@ Requisitos: Windows 10 ou 11, [EPANET 2.2 Brasil](https://www.ct.ufpb.br/lenhs/d
 | 5 | `"C:\EPANET_Ferramentas\05_relatorio_iarha.py" $INPFILE 10 40 0.4 3.5` | Não |
 | 6 | `"C:\EPANET_Ferramentas\06_relatorio_analise_rede.py" $INPFILE` | Não |
 | 7 | `"C:\EPANET_Ferramentas\07_configurar_relatorio.py"` | Não |
+| 8 | `"C:\EPANET_Ferramentas\08_imagem_fundo.py" $INPFILE` | **Sim** |
 
 A planilha `epanet_br_tools/Cadastro_Ferramentas_EPANET_Br.xlsx` monta essas linhas com os seus caminhos.
 
@@ -67,6 +69,7 @@ Encontrou outro problema ou tem uma sugestão? Abra uma **Issue** neste reposit�
 ## Créditos e licença
 
 - **EPANET** — U.S. Environmental Protection Agency (USEPA), domínio público. **EPANET 2.2 Brasil** — [LENHS/UFPB](https://www.ct.ufpb.br/lenhs/downlodas/epanet/).
+- **Imagens de fundo (ferramenta 8)** — serviços de mapa da Esri (ArcGIS Online): World Imagery (Esri, Maxar, Earthstar Geographics e comunidade de usuários GIS) e mapas de ruas, topográfico e cinza. O uso segue os termos da Esri; cite a fonte em figuras e relatórios.
 - **Fontes do relatório 6** — Bebas Neue (The Bebas Neue Project Authors) e Fira Sans Condensed (Mozilla Foundation e Telefonica S.A.), sob a SIL Open Font License 1.1.
 - **Ferramentas IARHA** — Álvaro Prestes Ribeiro e LUGH Engenharia Ambiental e Sanitária, licença [MIT](LICENSE).
 
