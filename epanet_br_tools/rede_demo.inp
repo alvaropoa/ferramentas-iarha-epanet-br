@@ -1,0 +1,73 @@
+[TITLE]
+Rede de demonstracao - ferramentas EPANET 2.2 Brasil
+
+[JUNCTIONS]
+;ID   Cota   Demanda  Padrao
+N1    92     1.5      P1
+N2    90     2.0      P1
+N3    88     1.8      P1
+N4    95     1.2      P1
+N5    85     2.5      P1
+N6    80     2.2      P1
+N7    104    0.8      P1
+N8    70     1.6      P1
+N9    62     1.4      P1
+N10   78     2.0      P1
+
+[RESERVOIRS]
+;ID   Carga
+R1    122
+
+[TANKS]
+
+[PIPES]
+;ID   No1  No2  Comprim  Diam  Rug  Perda  Status
+T0    R1   N1   850      200   120  0      Open
+T1    N1   N2   300      150   120  0      Open
+T2    N2   N3   280      100   120  0      Open
+T3    N1   N4   320      100   110  0      Open
+T4    N4   N7   250      50    110  0      Open
+T5    N2   N5   300      100   130  0      Open
+T6    N3   N6   260      75    130  0      Open
+T7    N5   N6   300      75    130  0      Open
+T8    N5   N8   350      100   130  0      Open
+T9    N8   N9   300      75    140  0      Open
+T10   N6   N10  220      50    140  0      Open
+T11   N4   N5   400      75    110  0      Open
+
+[PUMPS]
+
+[VALVES]
+
+[PATTERNS]
+P1  0.6 0.5 0.5 0.5 0.6 0.8 1.1 1.4 1.5 1.4 1.3 1.3
+P1  1.4 1.3 1.2 1.1 1.1 1.2 1.4 1.5 1.3 1.0 0.8 0.7
+
+[TIMES]
+ Duration           24:00
+ Hydraulic Timestep 1:00
+ Pattern Timestep   1:00
+ Report Timestep    1:00
+
+[OPTIONS]
+ Units              LPS
+ Headloss           H-W
+
+[REPORT]
+ Status             No
+ Summary            No
+
+[COORDINATES]
+R1   0    500
+N1   200  500
+N2   400  500
+N3   600  500
+N4   200  350
+N5   400  350
+N6   600  350
+N7   200  200
+N8   400  200
+N9   400  50
+N10  750  350
+
+[END]
