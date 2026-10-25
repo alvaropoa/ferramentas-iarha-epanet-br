@@ -68,6 +68,6 @@ Encontrou outro problema ou tem uma sugestão? Abra uma **Issue** neste reposit�
 
 - **EPANET** — U.S. Environmental Protection Agency (USEPA), domínio público. **EPANET 2.2 Brasil** — [LENHS/UFPB](https://www.ct.ufpb.br/lenhs/downlodas/epanet/).
 - **Fontes do relatório 6** — Bebas Neue (The Bebas Neue Project Authors) e Fira Sans Condensed (Mozilla Foundation e Telefonica S.A.), sob a SIL Open Font License 1.1.
-- **Ferramentas IARHA** — licença [MIT](LICENSE).
+- **Ferramentas IARHA** — Álvaro Prestes Ribeiro e LUGH Engenharia Ambiental e Sanitária, licença [MIT](LICENSE).
 
 Os relatórios refletem o modelo e os dados de entrada. Calibração e validação de campo são responsabilidade do projetista.

@@ -313,5 +313,5 @@ Os números das ferramentas foram conferidos contra cálculos independentes em t
 
 - **EPANET** — U.S. Environmental Protection Agency (USEPA), domínio público. **EPANET 2.2 Brasil** — [LENHS/UFPB](https://www.ct.ufpb.br/lenhs/downlodas/epanet/).
 - **Fontes do relatório 6** — Bebas Neue (The Bebas Neue Project Authors) e Fira Sans Condensed (Mozilla Foundation e Telefonica S.A.), ambas sob a SIL Open Font License 1.1. As licenças completas estão na pasta `fontes`.
-- **Ferramentas IARHA** — licença [MIT](../LICENSE).
+- **Ferramentas IARHA** — Álvaro Prestes Ribeiro e LUGH Engenharia Ambiental e Sanitária, licença [MIT](../LICENSE).
 - **Dúvidas e sugestões** — pelas Issues do repositório no GitHub.
